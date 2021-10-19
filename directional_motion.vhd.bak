@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+Entity directional_motion is port 
+	(
+		CLK		: in std_logic := '0';
+		RESET_n		: in std_logic := '0';
+		CLK_EN		: in std_logic := '0';
+		UP1_DOWN0		: in std_logic := '0';
+		COUNTER_BITS		: out std_logic_vector(7 downto 0)
+	);
+	end Entity;

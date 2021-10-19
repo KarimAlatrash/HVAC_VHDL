@@ -1,0 +1,430 @@
+Analysis & Synthesis report for LogicalStep_Lab4_top
+Sun Jul 26 13:18:24 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |LogicalStep_Lab4_top|Extender:Extendo|current_state
+  9. State Machine - |LogicalStep_Lab4_top|directional_motion:ydir|directional_motion_sm:sm0|current_state
+ 10. State Machine - |LogicalStep_Lab4_top|directional_motion:xdir|directional_motion_sm:sm0|current_state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "directional_motion:ydir"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 26 13:18:24 2020       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; LogicalStep_Lab4_top                        ;
+; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 101                                         ;
+;     Total combinational functions  ; 75                                          ;
+;     Dedicated logic registers      ; 59                                          ;
+; Total registers                    ; 59                                          ;
+; Total pins                         ; 30                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                  ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Option                                                           ; Setting              ; Default Value        ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Device                                                           ; 10M08DAF484C8G       ;                      ;
+; Top-level entity name                                            ; LogicalStep_Lab4_top ; LogicalStep_Lab4_top ;
+; Family name                                                      ; MAX 10               ; Cyclone V            ;
+; Use smart compilation                                            ; Off                  ; Off                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                   ;
+; Enable compact report table                                      ; Off                  ; Off                  ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto                 ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                  ;
+; Preserve fewer node names                                        ; On                   ; On                   ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable               ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001         ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993            ;
+; State Machine Processing                                         ; Auto                 ; Auto                 ;
+; Safe State Machine                                               ; Off                  ; Off                  ;
+; Extract Verilog State Machines                                   ; On                   ; On                   ;
+; Extract VHDL State Machines                                      ; On                   ; On                   ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                  ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                   ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                   ;
+; Parallel Synthesis                                               ; On                   ; On                   ;
+; DSP Block Balancing                                              ; Auto                 ; Auto                 ;
+; NOT Gate Push-Back                                               ; On                   ; On                   ;
+; Power-Up Don't Care                                              ; On                   ; On                   ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                  ;
+; Remove Duplicate Registers                                       ; On                   ; On                   ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                  ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                  ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                  ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                  ;
+; Ignore SOFT Buffers                                              ; On                   ; On                   ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                  ;
+; Optimization Technique                                           ; Balanced             ; Balanced             ;
+; Carry Chain Length                                               ; 70                   ; 70                   ;
+; Auto Carry Chains                                                ; On                   ; On                   ;
+; Auto Open-Drain Pins                                             ; On                   ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                  ;
+; Auto ROM Replacement                                             ; On                   ; On                   ;
+; Auto RAM Replacement                                             ; On                   ; On                   ;
+; Auto DSP Block Replacement                                       ; On                   ; On                   ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto                 ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                   ;
+; Strict RAM Replacement                                           ; Off                  ; Off                  ;
+; Allow Synchronous Control Signals                                ; On                   ; On                   ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                  ;
+; Auto RAM Block Balancing                                         ; On                   ; On                   ;
+; Auto RAM to Logic Cell Conversion                                ; Off                  ; Off                  ;
+; Auto Resource Sharing                                            ; Off                  ; Off                  ;
+; Allow Any RAM Size For Recognition                               ; Off                  ; Off                  ;
+; Allow Any ROM Size For Recognition                               ; Off                  ; Off                  ;
+; Allow Any Shift Register Size For Recognition                    ; Off                  ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                   ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                  ;
+; Timing-Driven Synthesis                                          ; On                   ; On                   ;
+; Report Parameter Settings                                        ; On                   ; On                   ;
+; Report Source Assignments                                        ; On                   ; On                   ;
+; Report Connectivity Checks                                       ; On                   ; On                   ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                  ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                    ;
+; Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation   ;
+; HDL message level                                                ; Level2               ; Level2               ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                  ;
+; Clock MUX Protection                                             ; On                   ; On                   ;
+; Auto Gated Clock Conversion                                      ; Off                  ; Off                  ;
+; Block Design Naming                                              ; Auto                 ; Auto                 ;
+; SDC constraint protection                                        ; Off                  ; Off                  ;
+; Synthesis Effort                                                 ; Auto                 ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                   ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                  ; Off                  ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium               ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto                 ;
+; Resource Aware Inference For Block RAM                           ; On                   ; On                   ;
++------------------------------------------------------------------+----------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; Grappler.vhd                     ; yes             ; User VHDL File  ; N:/My Documents/Lab4/Grappler.vhd              ;         ;
+; BiShiftReg.vhd                   ; yes             ; User VHDL File  ; N:/My Documents/Lab4/BiShiftReg.vhd            ;         ;
+; U_D_Bin_Countrer4bit.vhd         ; yes             ; User VHDL File  ; N:/My Documents/Lab4/U_D_Bin_Countrer4bit.vhd  ;         ;
+; compx4.vhd                       ; yes             ; User VHDL File  ; N:/My Documents/Lab4/compx4.vhd                ;         ;
+; compx1.vhd                       ; yes             ; User VHDL File  ; N:/My Documents/Lab4/compx1.vhd                ;         ;
+; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File  ; N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd  ;         ;
+; directional_motion.vhd           ; yes             ; User VHDL File  ; N:/My Documents/Lab4/directional_motion.vhd    ;         ;
+; directional_motion_sm.vhd        ; yes             ; User VHDL File  ; N:/My Documents/Lab4/directional_motion_sm.vhd ;         ;
+; Extender.vhd                     ; yes             ; User VHDL File  ; N:/My Documents/Lab4/Extender.vhd              ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 101       ;
+;                                             ;           ;
+; Total combinational functions               ; 75        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 47        ;
+;     -- 3 input functions                    ; 18        ;
+;     -- <=2 input functions                  ; 10        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 69        ;
+;     -- arithmetic mode                      ; 6         ;
+;                                             ;           ;
+; Total registers                             ; 59        ;
+;     -- Dedicated logic registers            ; 59        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 59        ;
+; Total fan-out                               ; 486       ;
+; Average fan-out                             ; 2.51      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                    ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                ; Entity Name           ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |LogicalStep_Lab4_top                 ; 75 (0)              ; 59 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                                                                              ; LogicalStep_Lab4_top  ; work         ;
+;    |Bidir_shift_reg:ShiftReg|         ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Bidir_shift_reg:ShiftReg                                                     ; Bidir_shift_reg       ; work         ;
+;    |Extender:Extendo|                 ; 10 (10)             ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Extender:Extendo                                                             ; Extender              ; work         ;
+;    |Grappler:Grap|                    ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Grappler:Grap                                                                ; Grappler              ; work         ;
+;    |directional_motion:xdir|          ; 31 (14)             ; 25 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:xdir                                                      ; directional_motion    ; work         ;
+;       |compx4:comp0|                  ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:xdir|compx4:comp0                                         ; compx4                ; work         ;
+;       |directional_motion_sm:sm0|     ; 9 (2)               ; 6 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:xdir|directional_motion_sm:sm0                            ; directional_motion_sm ; work         ;
+;          |U_D_Bin_Countrer4bit:count| ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:xdir|directional_motion_sm:sm0|U_D_Bin_Countrer4bit:count ; U_D_Bin_Countrer4bit  ; work         ;
+;    |directional_motion:ydir|          ; 29 (12)             ; 24 (18)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:ydir                                                      ; directional_motion    ; work         ;
+;       |compx4:comp0|                  ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:ydir|compx4:comp0                                         ; compx4                ; work         ;
+;       |directional_motion_sm:sm0|     ; 9 (2)               ; 6 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:ydir|directional_motion_sm:sm0                            ; directional_motion_sm ; work         ;
+;          |U_D_Bin_Countrer4bit:count| ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|directional_motion:ydir|directional_motion_sm:sm0|U_D_Bin_Countrer4bit:count ; U_D_Bin_Countrer4bit  ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Extender:Extendo|current_state                                                                                      ;
++--------------------------+------------------------+--------------------------+-------------------------+-------------------------+------------------------+
+; Name                     ; current_state.extended ; current_state.retracting ; current_state.extending ; current_state.retracted ; current_state.disabled ;
++--------------------------+------------------------+--------------------------+-------------------------+-------------------------+------------------------+
+; current_state.disabled   ; 0                      ; 0                        ; 0                       ; 0                       ; 0                      ;
+; current_state.retracted  ; 0                      ; 0                        ; 0                       ; 1                       ; 1                      ;
+; current_state.extending  ; 0                      ; 0                        ; 1                       ; 0                       ; 1                      ;
+; current_state.retracting ; 0                      ; 1                        ; 0                       ; 0                       ; 1                      ;
+; current_state.extended   ; 1                      ; 0                        ; 0                       ; 0                       ; 1                      ;
++--------------------------+------------------------+--------------------------+-------------------------+-------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|directional_motion:ydir|directional_motion_sm:sm0|current_state ;
++------------------+------------------+------------------+----------------------------------------------+
+; Name             ; current_state.S2 ; current_state.S1 ; current_state.S0                             ;
++------------------+------------------+------------------+----------------------------------------------+
+; current_state.S0 ; 0                ; 0                ; 0                                            ;
+; current_state.S1 ; 0                ; 1                ; 1                                            ;
+; current_state.S2 ; 1                ; 0                ; 1                                            ;
++------------------+------------------+------------------+----------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|directional_motion:xdir|directional_motion_sm:sm0|current_state ;
++------------------+------------------+------------------+----------------------------------------------+
+; Name             ; current_state.S2 ; current_state.S1 ; current_state.S0                             ;
++------------------+------------------+------------------+----------------------------------------------+
+; current_state.S0 ; 0                ; 0                ; 0                                            ;
+; current_state.S1 ; 0                ; 1                ; 1                                            ;
+; current_state.S2 ; 1                ; 0                ; 1                                            ;
++------------------+------------------+------------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++--------------------------------------------------------------------+--------------------+
+; Register name                                                      ; Reason for Removal ;
++--------------------------------------------------------------------+--------------------+
+; directional_motion:ydir|directional_motion_sm:sm0|current_state.S1 ; Lost fanout        ;
+; directional_motion:xdir|directional_motion_sm:sm0|current_state.S1 ; Lost fanout        ;
+; Total Number of Removed Registers = 2                              ;                    ;
++--------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 59    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |LogicalStep_Lab4_top|directional_motion:ydir|next_target_position[2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |LogicalStep_Lab4_top|directional_motion:xdir|next_target_position[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "directional_motion:ydir"                                                                          ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; system_fault_error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 30                          ;
+; cycloneiii_ff         ; 59                          ;
+;     CLR               ; 20                          ;
+;     ENA               ; 20                          ;
+;     ENA CLR           ; 10                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 75                          ;
+;     arith             ; 6                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 69                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 47                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.20                        ;
+; Average LUT depth     ; 2.60                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Sun Jul 26 13:17:59 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file grappler.vhd
+    Info (12022): Found design unit 1: Grappler-grapplesm File: N:/My Documents/Lab4/Grappler.vhd Line: 13
+    Info (12023): Found entity 1: Grappler File: N:/My Documents/Lab4/Grappler.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bishiftreg.vhd
+    Info (12022): Found design unit 1: Bidir_shift_reg-one File: N:/My Documents/Lab4/BiShiftReg.vhd Line: 15
+    Info (12023): Found entity 1: Bidir_shift_reg File: N:/My Documents/Lab4/BiShiftReg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file u_d_bin_countrer4bit.vhd
+    Info (12022): Found design unit 1: U_D_Bin_Countrer4bit-one File: N:/My Documents/Lab4/U_D_Bin_Countrer4bit.vhd Line: 16
+    Info (12023): Found entity 1: U_D_Bin_Countrer4bit File: N:/My Documents/Lab4/U_D_Bin_Countrer4bit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file compx4.vhd
+    Info (12022): Found design unit 1: compx4-Circuit File: N:/My Documents/Lab4/compx4.vhd Line: 12
+    Info (12023): Found entity 1: compx4 File: N:/My Documents/Lab4/compx4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file compx1.vhd
+    Info (12022): Found design unit 1: compx1-Circuit File: N:/My Documents/Lab4/compx1.vhd Line: 12
+    Info (12023): Found entity 1: compx1 File: N:/My Documents/Lab4/compx1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file logicalstep_lab4_top.vhd
+    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 17
+    Info (12023): Found entity 1: LogicalStep_Lab4_top File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file directional_motion.vhd
+    Info (12022): Found design unit 1: directional_motion-top File: N:/My Documents/Lab4/directional_motion.vhd Line: 25
+    Info (12023): Found entity 1: directional_motion File: N:/My Documents/Lab4/directional_motion.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file directional_motion_sm.vhd
+    Info (12022): Found design unit 1: directional_motion_sm-SM File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 27
+    Info (12023): Found entity 1: directional_motion_sm File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file extender.vhd
+    Info (12022): Found design unit 1: Extender-extendsm File: N:/My Documents/Lab4/Extender.vhd Line: 15
+    Info (12023): Found entity 1: Extender File: N:/My Documents/Lab4/Extender.vhd Line: 5
+Info (12127): Elaborating entity "LogicalStep_Lab4_top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at LogicalStep_Lab4_top.vhd(82): object "SYSTEM_FAULT_ERROR" assigned a value but never read File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 82
+Warning (10036): Verilog HDL or VHDL warning at LogicalStep_Lab4_top.vhd(83): object "grapple_en_temp" assigned a value but never read File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 83
+Info (12128): Elaborating entity "directional_motion" for hierarchy "directional_motion:xdir" File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 88
+Info (12128): Elaborating entity "compx4" for hierarchy "directional_motion:xdir|compx4:comp0" File: N:/My Documents/Lab4/directional_motion.vhd Line: 67
+Info (12128): Elaborating entity "compx1" for hierarchy "directional_motion:xdir|compx4:comp0|compx1:comp0" File: N:/My Documents/Lab4/compx4.vhd Line: 40
+Info (12128): Elaborating entity "directional_motion_sm" for hierarchy "directional_motion:xdir|directional_motion_sm:sm0" File: N:/My Documents/Lab4/directional_motion.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at directional_motion_sm.vhd(93): signal "less" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at directional_motion_sm.vhd(95): signal "greater" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at directional_motion_sm.vhd(102): signal "less" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at directional_motion_sm.vhd(109): signal "greater" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 109
+Info (12128): Elaborating entity "U_D_Bin_Countrer4bit" for hierarchy "directional_motion:xdir|directional_motion_sm:sm0|U_D_Bin_Countrer4bit:count" File: N:/My Documents/Lab4/directional_motion_sm.vhd Line: 60
+Info (12128): Elaborating entity "Bidir_shift_reg" for hierarchy "Bidir_shift_reg:ShiftReg" File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at BiShiftReg.vhd(26): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: N:/My Documents/Lab4/BiShiftReg.vhd Line: 26
+Info (12128): Elaborating entity "Extender" for hierarchy "Extender:Extendo" File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 125
+Info (12128): Elaborating entity "Grappler" for hierarchy "Grappler:Grap" File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 139
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pb[3]" File: N:/My Documents/Lab4/LogicalStep_Lab4_top.vhd Line: 11
+Info (21057): Implemented 131 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 101 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4814 megabytes
+    Info: Processing ended: Sun Jul 26 13:18:24 2020
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:19
+
+
